@@ -34,4 +34,4 @@ This is a modern slider built with HTML, CSS and Javascript. It is a simple slid
 
 # Try it out
 
-You can try out the slider by clicking [here](https://modern-slider.netlify.app/).
+You can try out the slider by clicking [here](https://ephemeral-zuccutto-49ec06.netlify.app/).
