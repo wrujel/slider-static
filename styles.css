@@ -358,7 +358,16 @@ header a {
   }
 }
 
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 640px) {
+  .description {
+    display: none;
+  }
+
+  .thumbnail > .item {
+    max-height: 250px;
+    max-width: 180px;
+  }
+
   .carousel .list .item .content {
     top: 7%;
     padding: 30px;
@@ -368,7 +377,7 @@ header a {
 
   .carousel .list .item .content .title,
   .carousel .list .item .content .topic {
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .carousel .list .item .content .buttons {
