@@ -4,6 +4,8 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: black;
   margin: 0;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 a {
@@ -37,8 +39,8 @@ header a {
 }
 
 .carousel {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   margin-top: -50px;
   position: relative;
