@@ -41,7 +41,18 @@
   This is a modern slider built with HTML, CSS and Javascript. It is a simple slider that can be used to display images or any other content. It is built with a modern design and is fully responsive.
 </div>
 
-## Try it out
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Tech Stack](#tech-stack)
+- [Demo](#demo)
+
+## Tech Stack
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Netlify](https://www.netlify.com/)
+
+## Demo
 You can try out the slider:
 
 [![demo][demo]][demo-link]
