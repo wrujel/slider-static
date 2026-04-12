@@ -1,11 +1,4 @@
-[demo]: https://img.shields.io/badge/🚀%20Live%20Demo-000000?style=for-the-badge&&logoColor=white&color=0a6bdb
-[status-link]: https://github.com/wrujel/monitor-repos
-[tests-link]: https://github.com/wrujel/monitor-tests
-
-[demo-link]: https://ephemeral-zuccutto-49ec06.netlify.app/
-[status]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwrujel%2Fmonitor-repos%2Fmain%2Fdata%2Fslider-static.json
-[tests]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwrujel%2Fmonitor-tests%2Fmain%2Fdata%2Fslider-static.json
-
+<!-- STATUS BADGES — Centered row of status/deploy/test badges linked to monitoring repos -->
 <div align='center'>
 
   [![demo][demo]][demo-link]
@@ -14,86 +7,153 @@
 
 </div>
 
+<!-- SCREENSHOT — Full-width centered screenshot of the app -->
 <div align='center'>
   <a href='/'>
     <img
       src='/images/screenshot.png'
       alt='Screenshot of the app'
-      width='80%'
+      width='100%'
     />
   </a>
 </div>
 
-<div align="center">
-  <h1>Modern Slider with HTML, CSS and Javascript</h1>
-</div>
-
-<div align="center">
-
-  [![HTML][html]][html-link]
-  [![CSS][css]][css-link]
-  [![Javascript][javascript]][javascript-link]
-  [![Netlify][netlify]][netlify-link]
-
-</div>
-
+<!-- TITLE — Project title extracted from the app or README <h1> -->
 <div align='center'>
-  This is a modern slider built with HTML, CSS and Javascript. It is a simple slider that can be used to display images or any other content. It is built with a modern design and is fully responsive.
+  <h1>Image Slider with HTML, CSS and JavaScript</h1>
+</div>
+
+<!-- TECH STACK BADGES — Centered shields.io badges for each technology used -->
+<div align='center'>
+
+  [![HTML5][html]][html-link]
+  [![CSS3][css]][css-link]
+  [![JavaScript][javascript]][javascript-link]
+
+</div>
+
+<!-- SHORT DESCRIPTION — 1-2 sentences describing the project + quick links -->
+<div align='center'>
+  A sleek, animated image carousel/slider built with vanilla HTML, CSS, and JavaScript. Features smooth transitions, auto-play functionality, thumbnail navigation, and CSS keyframe animations.
+
+  [Demo]({{DEMO_URL}}) · [Report issue](/issues) · [Suggest something](/issues)
 </div>
 
 ## Table of Contents
+
 - [Table of Contents](#table-of-contents)
+- [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running locally](#running-locally)
+- [Environment Variables](#environment-variables)
+- [Project Structure](#project-structure)
 - [Demo](#demo)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- [x] Fullscreen image carousel with smooth CSS animations
+- [x] Auto-play with configurable interval (5 seconds)
+- [x] Previous/Next navigation buttons
+- [x] Thumbnail strip for quick slide preview
+- [x] CSS keyframe animations for slide transitions (blur, translate, fade)
+- [x] Animated background overlay on active slide content
+- [x] Responsive layout with max-width constraints
+- [x] Google Material Icons integration
+- [x] Poppins font via Google Fonts
+- [x] 7 themed robot slides with detailed descriptions
 
 ## Tech Stack
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Netlify](https://www.netlify.com/)
+- [Google Fonts (Poppins)](https://fonts.google.com/specimen/Poppins)
+- [Google Material Icons](https://fonts.google.com/icons)
+
+## Getting Started
+
+### Prerequisites
+
+- Any modern web browser (Chrome, Firefox, Safari, Edge)
+- A local HTTP server (optional, for serving images correctly)
+
+### Installation
+
+```bash
+git clone https://github.com/wrujel/slider-static.git
+cd slider-static
+```
+
+### Running locally
+
+Open `index.html` directly in your browser, or use a local server:
+
+```bash
+# Using Python
+python -m http.server 8080
+
+# Using Node.js (npx)
+npx serve .
+```
+
+Open [http://localhost:8080](http://localhost:8080) with your browser to see the result.
+
+## Environment Variables
+
+This project does not require any environment variables for basic usage.
+
+## Project Structure
+
+```
+/
+├── images/
+├── app.js
+├── index.html
+├── styles.css
+└── LICENSE
+```
 
 ## Demo
-You can try out the slider:
 
-[![demo][demo]][demo-link]
+You can check out the demo:
 
+[![Demo][demo]][demo-link]
 
-<!-- Badges -->
-[nextjs]: https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js
-[typescript]: https://img.shields.io/badge/Typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&color=blue
-[tailwindcss]: https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-[react]: https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white
-[lodash]: https://img.shields.io/badge/Lodash-gray?style=for-the-badge&logo=lodash
-[next-auth]: https://img.shields.io/badge/Next--Auth-black?style=for-the-badge&logo=next.js
-[prisma]: https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white
-[axios]: https://img.shields.io/badge/Axios-56A7F7?style=for-the-badge&logo=axios&logoColor=white
-[react-icons]: https://img.shields.io/badge/React--Icons-61DAFB?style=for-the-badge&logo=react&logoColor=white
-[swr]: https://img.shields.io/badge/SWR-black?style=for-the-badge&logo=next.js
-[zustand]: https://img.shields.io/badge/Zustand-gray?style=for-the-badge&logo=npm
-[react-player]: https://img.shields.io/badge/React--Player-gray?style=for-the-badge&logo=npm
-[mongodb]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white
-[vercel]: https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white
+## Contributing
+
+Contributions are welcome! If you have suggestions or find bugs, please open an issue or submit a pull request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<!-- BADGE REFERENCES -->
 [html]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [css]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [javascript]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
-[netlify]: https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
 
-<!-- Badges links -->
-[nextjs-link]: https://nextjs.org/
-[typescript-link]: https://www.typescriptlang.org/
-[tailwindcss-link]: https://tailwindcss.com/
-[react-link]: https://reactjs.org/
-[lodash-link]: https://lodash.com/
-[next-auth-link]: https://next-auth.js.org/
-[prisma-link]: https://www.prisma.io/
-[axios-link]: https://axios-http.com/
-[react-icons-link]: https://react-icons.github.io/react-icons/
-[swr-link]: https://swr.vercel.app/
-[zustand-link]: https://zustand.surge.sh/
-[react-player-link]: https://www.npmjs.com/package/react-player
-[mongodb-link]: https://www.mongodb.com/
-[vercel-link]: https://vercel.com/
 [html-link]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [css-link]: https://developer.mozilla.org/en-US/docs/Web/CSS
 [javascript-link]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[netlify-link]: https://www.netlify.com/
+
+<!-- Status/Demo badges -->
+[demo]: https://img.shields.io/badge/🚀%20Live%20Demo-000000?style=for-the-badge&&logoColor=white&color=0a6bdb
+[status-link]: https://github.com/wrujel/monitor-repos
+[tests-link]: https://github.com/wrujel/monitor-tests
+
+[demo-link]: https://ephemeral-zuccutto-49ec06.netlify.app/
+[status]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwrujel%2Fmonitor-repos%2Fmain%2Fdata%2Fslider-static.json
+[tests]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fwrujel%2Fmonitor-tests%2Fmain%2Fdata%2Fslider-static.json
