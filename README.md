@@ -36,7 +36,7 @@
 <div align='center'>
   A sleek, animated image carousel/slider built with vanilla HTML, CSS, and JavaScript. Features smooth transitions, auto-play functionality, thumbnail navigation, and CSS keyframe animations.
 
-  [Demo]({{DEMO_URL}}) · [Report issue](/issues) · [Suggest something](/issues)
+  [Demo][demo-link] · [Report issue](/issues) · [Suggest something](/issues)
 </div>
 
 ## Table of Contents
