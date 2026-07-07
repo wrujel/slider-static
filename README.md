@@ -20,7 +20,7 @@
 
 <!-- TITLE — Project title extracted from the app or README <h1> -->
 <div align='center'>
-  <h1>Image Slider with HTML, CSS and JavaScript</h1>
+  <h1>Image Slider with HTML, CSS and JS</h1>
 </div>
 
 <!-- TECH STACK BADGES — Centered shields.io badges for each technology used -->
