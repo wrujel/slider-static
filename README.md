@@ -11,7 +11,7 @@
 <div align='center'>
   <a href='/'>
     <img
-      src='/images/screenshot.png'
+      src='screenshot.webp'
       alt='Screenshot of the app'
       width='100%'
     />
@@ -20,7 +20,7 @@
 
 <!-- TITLE — Project title extracted from the app or README <h1> -->
 <div align='center'>
-  <h1>Image Slider with HTML, CSS and JavaScript</h1>
+  <h1>Image Slider with HTML, CSS and JS</h1>
 </div>
 
 <!-- TECH STACK BADGES — Centered shields.io badges for each technology used -->
@@ -36,7 +36,7 @@
 <div align='center'>
   A sleek, animated image carousel/slider built with vanilla HTML, CSS, and JavaScript. Features smooth transitions, auto-play functionality, thumbnail navigation, and CSS keyframe animations.
 
-  [Demo]({{DEMO_URL}}) · [Report issue](/issues) · [Suggest something](/issues)
+  [Demo][demo-link] · [Report issue](/issues) · [Suggest something](/issues)
 </div>
 
 ## Table of Contents
