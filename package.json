@@ -1,0 +1,26 @@
+{
+  "name": "slider-static",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A sleek, animated image carousel/slider built with vanilla HTML, CSS, and JavaScript.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "serve .",
+    "preview": "serve dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.11",
+    "jsdom": "^30.0.1",
+    "serve": "^14.2.6",
+    "vitest": "^4.1.11"
+  }
+}

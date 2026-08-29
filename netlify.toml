@@ -1,0 +1,14 @@
+# Netlify auto-detects pnpm from pnpm-lock.yaml and the `packageManager` field
+# in package.json, and installs with it before running the command below — but
+# pnpm 11 needs Node >= 22.13 while Netlify's build image still defaults to
+# Node 20, so the version has to be pinned here.
+[build.environment]
+  NODE_VERSION = "22"
+
+# The site has no bundler; `pnpm run build` just copies the static assets into
+# dist/ so the deploy does not also publish package.json, the test suite and
+# the lockfile. Tests gate on GitHub Actions (coverage.yml), not here — both
+# run on a push to master, so gating twice would only slow the deploy.
+[build]
+  command = "pnpm run build"
+  publish = "dist"
