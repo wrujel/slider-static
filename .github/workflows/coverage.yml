@@ -27,13 +27,14 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Must precede setup-node: `cache: pnpm` needs the pnpm binary on PATH to
-      # resolve the store path. Version comes from package.json#packageManager.
-      - uses: pnpm/action-setup@v4
+      # resolve the store path. Version comes from package.json#packageManager —
+      # v6 is the first action release that supports pnpm 11.
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm

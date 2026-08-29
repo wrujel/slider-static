@@ -23,13 +23,14 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      # Version comes from package.json#packageManager. No `cache: pnpm` on
-      # setup-node here: nothing is installed, so there is no store to restore.
-      - uses: pnpm/action-setup@v4
+      # Version comes from package.json#packageManager (v6 is the first action
+      # release that supports pnpm 11). No `cache: pnpm` on setup-node here:
+      # nothing is installed, so there is no store to restore.
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
 
