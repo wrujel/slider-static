@@ -36,6 +36,14 @@ const carousel = () => document.querySelector(".carousel");
 const clickNext = () => document.getElementById("next").click();
 const clickPrev = () => document.getElementById("prev").click();
 
+const thumbnailAt = (index) =>
+  document.querySelectorAll(".carousel .thumbnail .item")[index];
+const clickThumbnail = (index) => thumbnailAt(index).click();
+const pressKeyOnThumbnail = (index, key) =>
+  thumbnailAt(index).dispatchEvent(
+    new KeyboardEvent("keydown", { key, bubbles: true, cancelable: true }),
+  );
+
 /** Re-executes app.js against the current DOM with a clean module registry. */
 async function loadApp() {
   vi.resetModules();
@@ -150,5 +158,109 @@ describe("carousel", () => {
 
     vi.advanceTimersByTime(1);
     expect(slides()).toEqual(["slide3", "slide1", "slide2"]);
+  });
+
+  it("hands the auto-play delay to the countdown bar in CSS", async () => {
+    await loadApp();
+
+    expect(carousel().style.getPropertyValue("--time-auto")).toBe(
+      `${TIME_AUTO}ms`,
+    );
+  });
+
+  it("exposes the thumbnails as buttons", async () => {
+    await loadApp();
+
+    for (const item of document.querySelectorAll(".carousel .thumbnail .item")) {
+      expect(item.getAttribute("role")).toBe("button");
+      expect(item.getAttribute("tabindex")).toBe("0");
+    }
+  });
+
+  it("opens the clicked thumbnail, skipping the slides in between", async () => {
+    await loadApp();
+
+    clickThumbnail(2);
+
+    expect(slides()).toEqual(["slide3", "slide1", "slide2"]);
+    expect(thumbnails()).toEqual(["thumb3", "thumb1", "thumb2"]);
+    expect(carousel().classList.contains("next")).toBe(true);
+  });
+
+  it("opens the clicked thumbnail from the keyboard", async () => {
+    await loadApp();
+
+    pressKeyOnThumbnail(1, "Enter");
+    expect(slides()).toEqual(["slide2", "slide3", "slide1"]);
+
+    vi.advanceTimersByTime(TIME_RUNNING);
+    pressKeyOnThumbnail(1, " ");
+    expect(slides()).toEqual(["slide3", "slide1", "slide2"]);
+  });
+
+  it("ignores keys that are not Enter or Space", async () => {
+    await loadApp();
+
+    pressKeyOnThumbnail(1, "a");
+
+    expect(slides()).toEqual(["slide1", "slide2", "slide3"]);
+    expect(carousel().className).toBe("carousel");
+  });
+
+  it("does nothing when the thumbnail of the current slide is clicked", async () => {
+    await loadApp();
+
+    clickThumbnail(0);
+
+    expect(slides()).toEqual(["slide1", "slide2", "slide3"]);
+    expect(thumbnails()).toEqual(["thumb1", "thumb2", "thumb3"]);
+    expect(carousel().className).toBe("carousel");
+  });
+
+  it("ignores thumbnail clicks while a transition is still running", async () => {
+    await loadApp();
+
+    clickNext();
+    clickThumbnail(2);
+
+    expect(slides()).toEqual(["slide2", "slide3", "slide1"]);
+
+    // Once the transition ends the picker answers again.
+    vi.advanceTimersByTime(TIME_RUNNING);
+    clickThumbnail(2);
+    expect(slides()).toEqual(["slide1", "slide2", "slide3"]);
+  });
+
+  it("ignores thumbnail clicks while a prev transition is running", async () => {
+    await loadApp();
+
+    clickPrev();
+    clickThumbnail(2);
+
+    expect(slides()).toEqual(["slide3", "slide1", "slide2"]);
+    expect(thumbnails()).toEqual(["thumb3", "thumb1", "thumb2"]);
+  });
+
+  it("ignores clicks that land on the strip but miss a thumbnail", async () => {
+    await loadApp();
+
+    document.querySelector(".carousel .thumbnail").click();
+
+    expect(slides()).toEqual(["slide1", "slide2", "slide3"]);
+    expect(carousel().className).toBe("carousel");
+  });
+
+  it("restarts the auto-play timer after a thumbnail is opened", async () => {
+    await loadApp();
+
+    vi.advanceTimersByTime(TIME_AUTO - 1000);
+    clickThumbnail(2);
+    expect(slides()).toEqual(["slide3", "slide1", "slide2"]);
+
+    vi.advanceTimersByTime(TIME_AUTO - 1);
+    expect(slides()).toEqual(["slide3", "slide1", "slide2"]);
+
+    vi.advanceTimersByTime(1);
+    expect(slides()).toEqual(["slide1", "slide2", "slide3"]);
   });
 });

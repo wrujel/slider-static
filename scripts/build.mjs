@@ -7,7 +7,7 @@ import { cp, mkdir, rm } from "node:fs/promises";
 import path from "node:path";
 
 const OUT = "dist";
-const ASSETS = ["index.html", "styles.css", "app.js", "images"];
+const ASSETS = ["index.html", "styles.css", "app.js", "images", "fonts"];
 
 // Studio-owned README artwork that lives beside the slide images but is never
 // loaded by the page — 1.8 MB of the deploy for nothing.

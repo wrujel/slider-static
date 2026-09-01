@@ -1,7 +1,83 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Poppins, self-hosted. The @import this replaces blocked first paint on a
+   round trip to fonts.googleapis.com — so the page rendered in a fallback face
+   (or not at all) behind a firewall, on a captive portal or offline — and it
+   pulled the whole 18-face family to use three of them. These are the same
+   files Google serves, split by subset so a Latin page never fetches the rest.
+   Poppins is under the SIL Open Font License 1.1; see fonts/OFL.txt. */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/poppins-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/poppins-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/poppins-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/poppins-500-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/poppins-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/poppins-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* One stack, so the buttons below cannot drift from the body copy. */
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+}
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-sans);
   background-color: black;
   margin: 0;
   height: 100dvh;
@@ -12,7 +88,13 @@ a {
   text-decoration: none;
   color: white;
   font-size: 12px;
-  text-shadow: 0 5px 10px #0004;
+  /* The nav floats over the slide photo with nothing behind it, so it needs a
+     tight dark shadow to stay legible over a bright image — the soft one alone
+     washed out. The wide shadow stays for depth. */
+  text-shadow:
+    0 1px 2px #000,
+    0 2px 6px #000c,
+    0 5px 10px #0006;
 }
 
 header {
@@ -99,8 +181,9 @@ header a {
   border: none;
   background-color: #eee;
   letter-spacing: 3px;
-  font-family: "Poppins";
+  font-family: var(--font-sans);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .carousel .list .item .content button:nth-child(2) {
@@ -124,6 +207,14 @@ header a {
   height: 280px;
   flex-shrink: 0;
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumbnail .item:focus-visible {
+  outline: 2px solid #f1683a;
+  outline-offset: 3px;
 }
 
 .thumbnail .item img {
@@ -131,6 +222,11 @@ header a {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+  transition: transform 0.4s;
+}
+
+.thumbnail .item:hover img {
+  transform: scale(1.08);
 }
 
 .thumbnail .item .content {
@@ -146,6 +242,36 @@ header a {
 
 .thumbnail .item .content .title {
   font-weight: bold;
+}
+
+/* Auto-play countdown. The first thumbnail is always the slide on screen, so
+   re-ordering the strip re-matches this selector and restarts the animation on
+   its own — no JS needed beyond the --time-auto handoff in app.js. */
+.thumbnail .item:nth-child(1)::before,
+.thumbnail .item:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 2;
+}
+
+.thumbnail .item:nth-child(1)::before {
+  background-color: #fff3;
+}
+
+.thumbnail .item:nth-child(1)::after {
+  background-color: #f1683a;
+  transform-origin: left;
+  animation: autoplayCountdown var(--time-auto, 5000ms) linear 1 forwards;
+}
+
+@keyframes autoplayCountdown {
+  to {
+    transform: scaleX(0);
+  }
 }
 
 .arrows {
@@ -170,12 +296,22 @@ header a {
   color: #fff;
   font-weight: bold;
   font-size: large;
+  cursor: pointer;
+  /* A dark halo and a rim keep the circle readable over bright slides, where a
+     translucent white button would otherwise disappear into the photo. */
+  box-shadow:
+    0 4px 12px #000a,
+    0 0 0 1px #0003;
+  text-shadow: 0 1px 3px #000c;
   transition: 0.5s;
 }
 
-.arrows button:hover {
+.arrows button:hover,
+.arrows button:focus-visible {
   background-color: #eee;
   color: #555;
+  text-shadow: none;
+  box-shadow: 0 6px 18px #000c;
 }
 
 .carousel .list .item:nth-child(1) {
@@ -334,7 +470,9 @@ header a {
 }
 
 .carousel.next .arrows button,
-.carousel.prev .arrows button {
+.carousel.prev .arrows button,
+.carousel.next .thumbnail .item,
+.carousel.prev .thumbnail .item {
   pointer-events: none;
 }
 
