@@ -12,7 +12,7 @@
   <a href='/'>
     <img
       src='screenshot.webp'
-      alt='Screenshot of the app'
+      alt='Full-screen image slider showing an SR-3003 SecureGuard robot with a headline, description and a thumbnail carousel strip along the bottom.'
       width='100%'
     />
   </a>
@@ -34,7 +34,7 @@
 
 <!-- SHORT DESCRIPTION — 1-2 sentences describing the project + quick links -->
 <div align='center'>
-  A sleek, animated image carousel/slider built with vanilla HTML, CSS, and JavaScript. Features smooth transitions, auto-play functionality, thumbnail navigation, and CSS keyframe animations.
+  A sleek, animated image carousel built with vanilla HTML, CSS and JavaScript — no framework and no build step. Seven themed robot slides transition with blur, translate and fade keyframes, auto-playing on a five-second interval, with previous and next controls and a thumbnail strip for jumping to any slide.
 
   [Demo][demo-link] · [Report issue](/issues) · [Suggest something](/issues)
 </div>
