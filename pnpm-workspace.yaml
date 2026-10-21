@@ -1,0 +1,17 @@
+# pnpm settings for this repo. It is not a monorepo: `packages` is here because
+# pnpm 9 reads any pnpm-workspace.yaml as a workspace manifest and refuses one
+# without it ("packages field missing or empty").
+packages:
+  - "."
+
+# Transitive security fixes.
+#   compression <1.8.2 -> GHSA-vc2v-76pw-4v95. Reached only through `serve`,
+#   the dev/preview server, whose latest release (14.2.6) pins compression
+#   1.8.1 exactly. Drop this once serve ships with 1.8.2 or later.
+#
+# Duplicated in package.json under `pnpm.overrides`: pnpm 11 reads this file
+# and ignores the package.json copy (with a warning), pnpm 9 reads only the
+# package.json copy, and the lockfile records the override either way, so the
+# two must stay in sync.
+overrides:
+  "serve>compression": ^1.8.2
